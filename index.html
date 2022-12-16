@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weight Converter - Kishore</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Mass Converter - Kishore</title>
 </head>
 <body>
     <div class="container">
-    <header>
-        <nav>
-            Weight Converter 
-        </nav>
-    </header>
-
-    <section class="main">
-        <p>Value to Convert:
+        <section class="main">
+            <h3> Mass Converter </h3>
+        <p>Value to Convert: <br>
          a real number or scientific notation
             </p>
             <input type="number" id="data">
@@ -32,12 +28,15 @@
             <option value="kilogram">Kilogram</option>
                 <option value="milligram">Milligram</option>
 
-       </select>
-       <button id="cal">Calculate</button>
-       <button id="reset">Reset</button>
+       </select> <br>
+       <div class="btnsection">
 
-       <hr class="line">
-       <div>Answer:
+           <button class="btn" id="cal">Calculate</button>
+           <button  class="btn"id="reset">Reset</button>
+       </div>
+
+       <div class="ResulSection">Answer:
+           <hr class="line">
         <p id="resultFrom"></p>
         <p id="insertData"></p>
         <p id="resulTo"></p>
@@ -45,6 +44,7 @@
 <p id="error"></p>
 
        </div>
+       <a href="https://www.calculatorsoup.com/calculators/conversions/weight.php"  target="_blank">Refered</a>
     </section>
 </div>
 <script src="index.js"></script>

@@ -94,7 +94,7 @@ function mainfunc() {
 
       }
    } else {
-      alert("please enter data")
+      alert("Please enter a Number")
    }
 
 
