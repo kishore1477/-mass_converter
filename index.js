@@ -1,56 +1,101 @@
 
-// var fromVal, toVal,dataVal;
-//  var from = document.getElementById('from');
-//  var to = document.getElementById('to');
-//  var data = document.getElementById('data');
-// function onChange(e) {
-//      var val = e.target.value;
-//      console.log("val: " , val);
-//        fromVal = from.value
-//       toVal = to.value
-//       dataVal = data.value
-//      console.log("dataVal", dataVal)
-// }
-
-
- 
- 
-
-// from.addEventListener('change',   onChange(e))
-// to.addEventListener('change',  onChange())
 cal.addEventListener('click', mainfunc)
-     
- 
+reset.addEventListener('click', resetfunc)
+
+function resetfunc() {
+   document.getElementById('resultFrom').innerHTML = ""
+   document.getElementById('insertData').innerHTML = ""
+   document.getElementById('resulTo').innerHTML = ""
+   document.getElementById('Result').innerHTML = ""
+   data.value = ''
+}
 
 function mainfunc() {
- alert("btn clicked")
 
-     var from = document.getElementById('from');
- var to = document.getElementById('to');
- var data = document.getElementById('data');
- var fromVal = from.value
-var  toVal = to.value
-var  dataVal = data.value
-   if(fromVal && toVal && dataVal){
-     switch (true) {
-   
-          case ( fromVal==='kilogram') && ( toVal==='gram') :
-               alert(dataVal)
-            alert(' kilo and gram')
+   var from = document.getElementById('from');
+   var to = document.getElementById('to');
+   var data = document.getElementById('data');
+   var fromVal = from.value
+   var toVal = to.value
+   var dataVal = data.value
+   if (fromVal && toVal && dataVal) {
+      switch (true) {
+         // Kilogram to ...
+         case (fromVal === 'kilogram') && (toVal === 'gram'):
+            document.getElementById('resultFrom').innerHTML = "Kilogram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "Gram"
+            document.getElementById('Result').innerHTML = dataVal * 1000
             break;
-          case ( fromVal==='kilogram') && ( toVal==='milligram') :
-               alert(dataVal)
-            alert(' kilo and milligram')
+         case (fromVal === 'kilogram') && (toVal === 'milligram'):
+            document.getElementById('resultFrom').innerHTML = "Kilogram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "Milligram"
+            document.getElementById('Result').innerHTML = dataVal * 1000000
             break;
-             
-            default:
-                 console.log("inside fromVal", fromVal );
-                 console.log("inside toVal", toVal );
-             
-            }
-   }else{
-alert("please enter data")
+         case (fromVal === 'kilogram') && (toVal === 'kilogram'):
+            document.getElementById('resultFrom').innerHTML = ""
+            document.getElementById('insertData').innerHTML = ""
+            document.getElementById('resulTo').innerHTML = ""
+            document.getElementById('Result').innerHTML = 'Both are same units'
+            break;
+
+
+
+         // gram to...
+         case (fromVal === 'gram') && (toVal === 'kilogram'):
+            document.getElementById('resultFrom').innerHTML = "Gram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "kilogram"
+            document.getElementById('Result').innerHTML = dataVal * 0.001
+            break;
+         case (fromVal === 'gram') && (toVal === 'milligram'):
+            document.getElementById('resultFrom').innerHTML = "Gram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "Milligram"
+            document.getElementById('Result').innerHTML = dataVal * 1000
+            break;
+         case (fromVal === 'gram') && (toVal === 'gram'):
+            document.getElementById('resultFrom').innerHTML = ""
+            document.getElementById('insertData').innerHTML = ""
+            document.getElementById('resulTo').innerHTML = ""
+            document.getElementById('Result').innerHTML = "Both are same units!"
+            break;
+
+
+
+         //  milligram  to ...
+         case (fromVal === 'milligram') && (toVal === 'kilogram'):
+            document.getElementById('resultFrom').innerHTML = "Milligram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "kilogram"
+            document.getElementById('Result').innerHTML = dataVal * 0.000001
+            break;
+
+         case (fromVal === 'milligram') && (toVal === 'gram'):
+            document.getElementById('resultFrom').innerHTML = "milligram"
+            document.getElementById('insertData').innerHTML = dataVal
+            document.getElementById('resulTo').innerHTML = "Gram"
+            document.getElementById('Result').innerHTML = dataVal * 0.001
+            break;
+         case (fromVal === 'milligram') && (toVal === 'milligram'):
+            document.getElementById('resultFrom').innerHTML = ""
+            document.getElementById('insertData').innerHTML = ""
+            document.getElementById('resulTo').innerHTML = ""
+            document.getElementById('Result').innerHTML = "Both are are"
+            break;
+
+
+      
+
+
+         default:
+            error.value = "Something went wrong"
+
+      }
+   } else {
+      alert("please enter data")
    }
- 
-  
+
+
 }
